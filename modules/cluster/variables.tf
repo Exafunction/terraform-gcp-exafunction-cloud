@@ -44,7 +44,7 @@ variable "runner_pools" {
   type = list(object({
     # Node group suffix.
     suffix = string
-    # Machine type to use with the Exafunction runner node pool.
+    # Machine type to use.
     machine_type = string
     # One of (ON_DEMAND, PREEMPTIBLE, SPOT).
     capacity_type = string

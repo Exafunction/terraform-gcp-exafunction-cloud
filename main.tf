@@ -25,8 +25,8 @@ module "exafunction_cluster" {
 
   vpc_name                      = module.exafunction_network.vpc_name
   subnet_name                   = module.exafunction_network.subnet_name
-  pods_secondary_range_name     = "pod-ip-range"
-  services_secondary_range_name = "service-ip-range"
+  pods_secondary_range_name     = module.exafunction_network.pods_secondary_range_name
+  services_secondary_range_name = module.exafunction_network.services_secondary_range_name
 
   runner_pools = [
     {
@@ -64,7 +64,7 @@ module "exafunction_module_repo_backend" {
   exadeploy_id = "exa-mrbe-${var.suffix}"
 
   vpc_id = module.exafunction_network.vpc_id
-  region = "us-west1"
+  region = var.region
 
   postgres_version = "POSTGRES_13"
   db_username      = "exafunction"

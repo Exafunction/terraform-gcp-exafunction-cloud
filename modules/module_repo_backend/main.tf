@@ -44,6 +44,8 @@ resource "google_sql_user" "cloud_sql_user" {
   name     = var.db_username
   instance = google_sql_database_instance.default_cloud_sql.name
   password = random_password.cloud_sql_password.result
+
+  deletion_policy = "ABANDON"
 }
 
 ###############################################################################

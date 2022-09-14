@@ -8,7 +8,7 @@ Note that this only adds a firewall rule to the Exafunction VPC and not the peer
 module "exafunction_peering" {
   # Set the module source and version to use this module.
   source = "Exafunction/exafunction-cloud/gcp//modules/peering"
-  version = "0.1.0"
+  version = "x.y.z"
 
   # Set the Exafunction VPC self link.
   vpc_self_link      = google_compute_network.exafunction_vpc.self_link

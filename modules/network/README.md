@@ -7,7 +7,7 @@ This Terraform module is used to set up the required network resources for an Ex
 module "exafunction_network" {
   # Set the module source and version to use this module.
   source = "Exafunction/exafunction-cloud/gcp//modules/network"
-  version = "0.1.0"
+  version = "x.y.z"
 
   # Set the VPC name, subnet name, and subnet region.
   vpc_name       = "exafunction-vpc-simple"

@@ -34,6 +34,7 @@ module "exafunction_cluster" {
       machine_type      = "n2-standard-4"
       capacity_type     = "SPOT"
       disk_size         = 100
+      local_ssd_count   = 0
       min_size          = 1
       max_size          = 2
       accelerator_count = 0
@@ -47,6 +48,7 @@ module "exafunction_cluster" {
       machine_type      = "n1-standard-4"
       capacity_type     = "ON_DEMAND"
       disk_size         = 100
+      local_ssd_count   = 0
       min_size          = 0
       max_size          = 3
       accelerator_count = 1

@@ -46,7 +46,8 @@ resource "google_container_node_pool" "runner_pools" {
       type               = each.value.accelerator_type
       gpu_partition_size = null
     }] : []
-    disk_size_gb = each.value.disk_size
+    disk_size_gb    = each.value.disk_size
+    local_ssd_count = each.value.local_ssd_count
     metadata = {
       disable-legacy-endpoints = "true"
     }

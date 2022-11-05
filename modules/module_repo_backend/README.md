@@ -45,6 +45,7 @@ See [examples/simple_module_repo_backend](https://github.com/Exafunction/terrafo
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_db_flags"></a> [db\_flags](#input\_db\_flags) | CloudSQL Postgres flags. | <pre>list(object({<br>    name  = string<br>    value = string<br>  }))</pre> | `[]` | no |
 | <a name="input_db_machine_type"></a> [db\_machine\_type](#input\_db\_machine\_type) | CloudSQL instance machine type. | `string` | `"db-f1-micro"` | no |
 | <a name="input_db_username"></a> [db\_username](#input\_db\_username) | CloudSQL database username. | `string` | `"postgres"` | no |
 | <a name="input_exadeploy_id"></a> [exadeploy\_id](#input\_exadeploy\_id) | Unique identifier for a deployment of the ExaDeploy system. | `string` | `"exafunction"` | no |

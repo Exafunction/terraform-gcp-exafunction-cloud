@@ -41,3 +41,12 @@ variable "db_machine_type" {
   type        = string
   default     = "db-f1-micro"
 }
+
+variable "db_flags" {
+  description = "CloudSQL Postgres flags."
+  type = list(object({
+    name  = string
+    value = string
+  }))
+  default = []
+}

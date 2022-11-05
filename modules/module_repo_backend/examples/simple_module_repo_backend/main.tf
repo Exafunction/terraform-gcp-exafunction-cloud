@@ -36,4 +36,8 @@ module "exafunction_module_repo_backend" {
   postgres_version = "POSTGRES_13"
   db_username      = "test_user"
   db_machine_type  = "db-f1-micro"
+  db_flags = [{
+    name  = "max_connections"
+    value = "100"
+  }]
 }

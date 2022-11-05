@@ -31,6 +31,13 @@ resource "google_sql_database_instance" "default_cloud_sql" {
       private_network    = var.vpc_id
       allocated_ip_range = google_compute_global_address.cloud_sql_address.name
     }
+    dynamic "database_flags" {
+      for_each = var.db_flags
+      content {
+        name  = database_flags.value["name"]
+        value = database_flags.value["value"]
+      }
+    }
   }
 }
 

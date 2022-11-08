@@ -51,6 +51,9 @@ resource "google_container_node_pool" "runner_pools" {
     metadata = {
       disable-legacy-endpoints = "true"
     }
+    gvnic {
+      enabled = each.value.enable_gvnic
+    }
     labels = merge({
       role = "runner"
       },

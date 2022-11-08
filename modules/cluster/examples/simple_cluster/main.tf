@@ -56,6 +56,7 @@ module "exafunction_cluster" {
       additional_labels = {
         "test-label" = "exafunction-label-cpu"
       }
+      enable_gvnic = false
     },
     {
       suffix            = "gpu"
@@ -76,6 +77,7 @@ module "exafunction_cluster" {
       additional_labels = {
         "test-label" = "exafunction-label-gpu"
       }
+      enable_gvnic = true
     }
   ]
 }

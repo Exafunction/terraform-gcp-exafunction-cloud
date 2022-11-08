@@ -72,6 +72,8 @@ variable "runner_pools" {
     }))
     # Additional labels.
     additional_labels = map(string)
+    # Whether to enable gvnic.
+    enable_gvnic = bool
   }))
   default = [{
     suffix            = "gpu"
@@ -86,6 +88,7 @@ variable "runner_pools" {
     node_zones        = ["us-west1-a", "us-west1-b"]
     additional_taints = []
     additional_labels = {}
+    enable_gvnic      = false
   }]
   validation {
     condition = alltrue([

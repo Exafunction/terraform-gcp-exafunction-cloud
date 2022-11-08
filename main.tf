@@ -42,6 +42,7 @@ module "exafunction_cluster" {
       node_zones        = []
       additional_taints = []
       additional_labels = {}
+      enable_gvnic      = false
     },
     {
       suffix            = "gpu"
@@ -56,6 +57,7 @@ module "exafunction_cluster" {
       node_zones        = ["us-west1-a", "us-west1-b"]
       additional_taints = []
       additional_labels = {}
+      enable_gvnic      = false
     }
   ]
 }

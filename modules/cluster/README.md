@@ -58,6 +58,7 @@ See [examples/simple_cluster](https://github.com/Exafunction/terraform-gcp-exafu
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_auto_upgrade"></a> [auto\_upgrade](#input\_auto\_upgrade) | Whether the cluster nodes should be automatically upgraded. | `bool` | `true` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of the GKE cluster to create. | `string` | `"exafunction-cluster"` | no |
 | <a name="input_pods_secondary_range_name"></a> [pods\_secondary\_range\_name](#input\_pods\_secondary\_range\_name) | The name of the secondary range in the subnetwork to use for pod IP addresses. | `string` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | Region to create the GKE cluster in. | `string` | n/a | yes |

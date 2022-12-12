@@ -39,6 +39,12 @@ variable "services_secondary_range_name" {
   type        = string
 }
 
+variable "auto_upgrade" {
+  description = "Whether the cluster nodes should be automatically upgraded."
+  type        = bool
+  default     = true
+}
+
 variable "runner_pools" {
   description = "Configuration parameters for Exafunction runner node pools."
   type = list(object({

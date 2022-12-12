@@ -35,6 +35,7 @@ module "exafunction_cluster" {
   subnet_name                   = google_compute_subnetwork.subnet.name
   pods_secondary_range_name     = "pod-ip-range"
   services_secondary_range_name = "service-ip-range"
+  auto_upgrade                  = false
 
   runner_pools = [
     {

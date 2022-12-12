@@ -15,6 +15,10 @@ resource "google_container_cluster" "exafunction" {
     cluster_secondary_range_name  = var.pods_secondary_range_name
     services_secondary_range_name = var.services_secondary_range_name
   }
+
+  release_channel {
+    channel = var.auto_upgrade ? "REGULAR" : "UNSPECIFIED"
+  }
 }
 
 locals {
@@ -36,6 +40,11 @@ resource "google_container_node_pool" "runner_pools" {
   }
 
   node_locations = length(each.value.node_zones) > 0 ? each.value.node_zones : null
+
+  management {
+    auto_repair  = true
+    auto_upgrade = var.auto_upgrade
+  }
 
   node_config {
     preemptible  = each.value.capacity_type == "PREEMPTIBLE" ? true : false
@@ -91,6 +100,11 @@ resource "google_container_node_pool" "default" {
     max_node_count = 10
   }
 
+  management {
+    auto_repair  = true
+    auto_upgrade = var.auto_upgrade
+  }
+
   node_config {
     labels = {
       role = "default"
@@ -112,6 +126,11 @@ resource "google_container_node_pool" "scheduler" {
   autoscaling {
     min_node_count = 0
     max_node_count = 1
+  }
+
+  management {
+    auto_repair  = true
+    auto_upgrade = var.auto_upgrade
   }
 
   node_config {
@@ -143,6 +162,11 @@ resource "google_container_node_pool" "module_repository" {
     max_node_count = 1
   }
 
+  management {
+    auto_repair  = true
+    auto_upgrade = var.auto_upgrade
+  }
+
   node_config {
     machine_type = "n2-standard-4"
     disk_size_gb = 100
@@ -170,6 +194,11 @@ resource "google_container_node_pool" "prometheus" {
   autoscaling {
     min_node_count = 0
     max_node_count = 1
+  }
+
+  management {
+    auto_repair  = true
+    auto_upgrade = var.auto_upgrade
   }
 
   node_config {

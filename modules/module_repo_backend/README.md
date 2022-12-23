@@ -58,6 +58,7 @@ See [examples/simple_module_repo_backend](https://github.com/Exafunction/terrafo
 | Name | Description |
 |------|-------------|
 | <a name="output_cloud_sql_address"></a> [cloud\_sql\_address](#output\_cloud\_sql\_address) | Address for the CloudSQL instance. |
+| <a name="output_cloud_sql_instance_name"></a> [cloud\_sql\_instance\_name](#output\_cloud\_sql\_instance\_name) | Name for the CloudSQL instance. |
 | <a name="output_cloud_sql_password"></a> [cloud\_sql\_password](#output\_cloud\_sql\_password) | Password for the CloudSQL instance. |
 | <a name="output_cloud_sql_port"></a> [cloud\_sql\_port](#output\_cloud\_sql\_port) | Port for the CloudSQL instance. |
 | <a name="output_cloud_sql_username"></a> [cloud\_sql\_username](#output\_cloud\_sql\_username) | Username for the CloudSQL instance. |

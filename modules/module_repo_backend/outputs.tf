@@ -3,6 +3,11 @@ output "cloud_sql_address" {
   value       = google_sql_database_instance.default_cloud_sql.private_ip_address
 }
 
+output "cloud_sql_instance_name" {
+  description = "Name for the CloudSQL instance."
+  value       = google_sql_database_instance.default_cloud_sql.name
+}
+
 output "cloud_sql_port" {
   description = "Port for the CloudSQL instance."
   value       = 5432

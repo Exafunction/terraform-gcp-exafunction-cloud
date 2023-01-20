@@ -40,4 +40,8 @@ module "exafunction_module_repo_backend" {
     name  = "max_connections"
     value = "100"
   }]
+
+  availability_type              = "REGIONAL"
+  backup_enabled                 = true
+  point_in_time_recovery_enabled = true
 }

@@ -25,7 +25,12 @@ resource "google_sql_database_instance" "default_cloud_sql" {
   deletion_protection = false
 
   settings {
-    tier = var.db_machine_type
+    tier              = var.db_machine_type
+    availability_type = var.availability_type
+    backup_configuration {
+      enabled                        = var.backup_enabled
+      point_in_time_recovery_enabled = var.point_in_time_recovery_enabled
+    }
     ip_configuration {
       ipv4_enabled       = false
       private_network    = var.vpc_id

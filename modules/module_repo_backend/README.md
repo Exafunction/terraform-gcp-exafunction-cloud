@@ -45,10 +45,13 @@ See [examples/simple_module_repo_backend](https://github.com/Exafunction/terrafo
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_availability_type"></a> [availability\_type](#input\_availability\_type) | CloudSQL availability type. | `string` | `"ZONAL"` | no |
+| <a name="input_backup_enabled"></a> [backup\_enabled](#input\_backup\_enabled) | Enable backups. | `bool` | `false` | no |
 | <a name="input_db_flags"></a> [db\_flags](#input\_db\_flags) | CloudSQL Postgres flags. | <pre>list(object({<br>    name  = string<br>    value = string<br>  }))</pre> | `[]` | no |
 | <a name="input_db_machine_type"></a> [db\_machine\_type](#input\_db\_machine\_type) | CloudSQL instance machine type. | `string` | `"db-f1-micro"` | no |
 | <a name="input_db_username"></a> [db\_username](#input\_db\_username) | CloudSQL database username. | `string` | `"postgres"` | no |
 | <a name="input_exadeploy_id"></a> [exadeploy\_id](#input\_exadeploy\_id) | Unique identifier for a deployment of the ExaDeploy system. | `string` | `"exafunction"` | no |
+| <a name="input_point_in_time_recovery_enabled"></a> [point\_in\_time\_recovery\_enabled](#input\_point\_in\_time\_recovery\_enabled) | Enable point in time recovery. | `bool` | `false` | no |
 | <a name="input_postgres_version"></a> [postgres\_version](#input\_postgres\_version) | CloudSQL Postgres version. | `string` | `"POSTGRES_13"` | no |
 | <a name="input_region"></a> [region](#input\_region) | The region to create the CloudSQL instance in. | `string` | n/a | yes |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The ID of the VPC to create the CloudSQL instance in. | `string` | n/a | yes |

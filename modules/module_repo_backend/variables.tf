@@ -50,3 +50,26 @@ variable "db_flags" {
   }))
   default = []
 }
+
+variable "availability_type" {
+  description = "CloudSQL availability type."
+  type        = string
+  default     = "ZONAL"
+
+  validation {
+    condition     = contains(["ZONAL", "REGIONAL"], var.availability_type)
+    error_message = "Invalid availability type."
+  }
+}
+
+variable "backup_enabled" {
+  description = "Enable backups."
+  type        = bool
+  default     = false
+}
+
+variable "point_in_time_recovery_enabled" {
+  description = "Enable point in time recovery."
+  type        = bool
+  default     = false
+}
